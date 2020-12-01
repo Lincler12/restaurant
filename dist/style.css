@@ -1,0 +1,82 @@
+* {
+    --black: rgba(0, 0, 0, 1);
+    --charcoal: rgba(47, 69, 80, 1);
+    --dark-electric-blue: rgba(88, 111, 124, 1);
+    --powder-blue: rgba(184, 219, 217, 1);
+    --ghost-white: rgba(244, 244, 249, 1);
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
+    background-color: var(--ghost-white);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content {
+    width: 100%;
+    height: 100vh;
+}
+
+#page-header {
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg');
+    background-color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    /* flex-direction: column;
+    justify-content: flex-end; */
+}
+
+div#top-overlay{
+    width: 100%;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div#overlay-button-wrapper{
+    display: flex;
+}
+div#overlay-button-wrapper button#nav-toggle-btn{
+    cursor: pointer;
+    font-size: x-large;
+    align-self: center;
+
+}
+div#overlay-button-wrapper button#reservations{
+    border: 1px solid black;
+    padding: 5px 10px;
+    align-self:center;
+    margin-right: 20px;
+    background-color: var(--ghost-white);
+    cursor: pointer;
+}
+
+.grid-lay {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
