@@ -1,1 +1,1 @@
-alert("kind of awesome");
+(()=>{const t=document.getElementById("modal-content"),e=document.getElementById("modal"),n=document.getElementById("modal-toggle-btn");n.addEventListener("click",(function(){e.classList.toggle("modal-toggle"),t.classList.toggle("modal-toggle-content")})),n.addEventListener("click",(function(){n.classList.toggle("change")}))})();

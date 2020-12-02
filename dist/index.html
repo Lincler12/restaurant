@@ -6,25 +6,68 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Restaurant</title>
+    <title>The Old Sailor</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
 <body>
     <div id="content">
+        <div id="top-nav">
+            <div id="logo"><img src="/dist/images/old-sailor.png" alt=""></div>
+            <div id="overlay-button-wrapper">
+                <button id="reservations">Reservations</button>
+                <div class="container" id = "modal-toggle-btn">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+            <div id="modal" class="modal-style">
+                <div id="modal-content">
+                    <ul>
+                        <li><a href="http://" class="nav-link">Menus</a> </li>
+                        <li><a href="http://" class="nav-link">About</a></li>
+                        <li><a href="http://" class="nav-link">Location & Hours</a></li>
+                        <li><a href="http://" class="nav-link">Private Dining</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <header id="page-header">
             <div class="overlay flex-lay">
-                <div id="top-overlay">
-                    <i id="logo">yo</i>
-                    <div id = "overlay-button-wrapper">
 
-                        <button id ="reservations">Reservations</button>
-                        <button id="nav-toggle-btn" class="fas fa-bars"></button>
+                <div id="control-img-wrapper">
+                    <div id="previous" class="control"><i class="fas fa-angle-left"></i></div>
+                    <div id="stop" class="control"><img src="https://img.icons8.com/windows/32/000000/pause--v1.png" />
                     </div>
-
+                    <div id="next" class="control"><i class="fas fa-angle-right"></i></div>
                 </div>
             </div>
         </header>
+        <main>
+            <section>
+                <h3>The Old Sailor</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam ratione nemo corporis, mollitia
+                    ipsum, recusandae incidunt blanditiis quod velit consectetur, facere eius eos sequi? Accusantium
+                    quae doloribus illum consequuntur Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                    repellendus maiores soluta veniam ab. Minima atque praesentium molestiae dolor non ipsa delectus
+                    doloribus animi eligendi. Incidunt, amet. Reprehenderit, iste quaerat? Lorem ipsum dolor sit amet
+                    consectetur, adipisicing elit. Velit, omnis illum, accusantium iste iusto totam sit nulla obcaecati
+                    rerum animi aut numquam delectus distinctio consectetur odit perferendis, ea ad eos?Lorem ipsum
+                    dolor sit amet consectetur, adipisicing elit. Unde aliquam et quisquam hic nemo, tempore omnis eos?
+                    Ad saepe blanditiis ut eum magni doloremque ab harum debitis? Nisi, sunt commodi! Lorem, ipsum dolor
+                    sit amet consectetur adipisicing elit. Fuga consequatur ipsum incidunt fugit quos maxime est aut
+                    dolor mollitia sed asperiores molestiae, laborum odit eaque ut. In cum reprehenderit quasi. Lorem
+                    ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam commodi quibusdam numquam, deserunt
+                    similique nobis impedit? Quia laborum sit alias debitis voluptates rem officiis ullam? Commodi
+                    impedit fugit beatae voluptatibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Exercitationem, nemo. Quod officiis, facilis quisquam labore deserunt iusto quas odio numquam
+                    consequuntur temporibus quaerat neque harum eos cumque saepe, maxime ut.</p>
+            </section>
+        </main>
+        <footer>
+            <button>9W 23rd St</button>
+        </footer>
     </div>
 
     <script src="main.js"></script>
