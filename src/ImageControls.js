@@ -1,10 +1,4 @@
-import foodImg1 from './images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg';
-import foodImg2 from './images/anna-pelzer-IGfIGP5ONV0-unsplash.jpg';
-import foodImg3 from './images/brooke-lark-1Rm9GLHV0UA-unsplash.jpg';
-import foodImg4 from './images/brooke-lark-M4E7X3z80PQ-unsplash.jpg';
-import foodImg5 from './images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg';
-import foodImg6 from './images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg';
-
+import {load} from './load';
 
 const foodImageController = (() => {
     const pageHeader = document.getElementById('page-header');
@@ -18,14 +12,7 @@ const foodImageController = (() => {
     const intervalTime = 10000;
     let intervalVar;
     let pressed = true;
-    let foodImages = [
-        `url(${foodImg1})`,
-        `url(${foodImg2})`,
-        `url(${foodImg3})`,
-        `url(${foodImg4})`,
-        `url(${foodImg5})`,
-        `url(${foodImg6})`
-    ];
+    let foodImages = load.foodUrl;
     const buttonImages = {
         play: "https://img.icons8.com/android/24/000000/play.png",
         pause: "https://img.icons8.com/windows/32/000000/pause--v1.png"
