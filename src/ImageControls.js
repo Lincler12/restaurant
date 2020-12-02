@@ -4,7 +4,6 @@ import foodImg3 from './images/brooke-lark-1Rm9GLHV0UA-unsplash.jpg';
 import foodImg4 from './images/brooke-lark-M4E7X3z80PQ-unsplash.jpg';
 import foodImg5 from './images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg';
 import foodImg6 from './images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg';
-import foodImg7 from './images/nick-karvounis-Ciqxn7FE4vE-unsplash.jpg';
 
 
 const foodImageController = (() => {
@@ -14,6 +13,7 @@ const foodImageController = (() => {
     const stop = document.getElementById('stop');
     const imgPausePlayElement = document.createElement('img');
     let counter = 0;
+    const imgCount = 6;
     let play = true;
     const intervalTime = 10000;
     let intervalVar;
@@ -24,8 +24,7 @@ const foodImageController = (() => {
         `url(${foodImg3})`,
         `url(${foodImg4})`,
         `url(${foodImg5})`,
-        `url(${foodImg6})`,
-        `url(${foodImg7})'`
+        `url(${foodImg6})`
     ];
     const buttonImages = {
         play: "https://img.icons8.com/android/24/000000/play.png",
@@ -37,7 +36,7 @@ const foodImageController = (() => {
     const getNext = () => {
         if (pressed) {
             counter++;
-            if (counter === 7) {
+            if (counter === imgCount) {
                 counter = 0;
             }
             pageHeader.style.backgroundImage = foodImages[counter];
