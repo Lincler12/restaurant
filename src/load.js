@@ -30,6 +30,7 @@ const load = (() => {
     }
 
     return{
+        foodImg1,
         foodUrl,
     }
 })();

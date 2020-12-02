@@ -13,6 +13,7 @@ const foodImageController = (() => {
     let intervalVar;
     let pressed = true;
     let foodImages = [...load.foodUrl];
+    pageHeader.style.backgroundImage = `url(${load.foodImg1})`;
     const buttonImages = {
         play: "https://img.icons8.com/android/24/000000/play.png",
         pause: "https://img.icons8.com/windows/32/000000/pause--v1.png"
@@ -39,7 +40,7 @@ const foodImageController = (() => {
         if (pressed) {
             counter--;
             if (counter < 0) {
-                counter = 6;
+                counter = imgCount-1;
             }
             pageHeader.style.backgroundImage = foodImages[counter];
             pressed = false;
