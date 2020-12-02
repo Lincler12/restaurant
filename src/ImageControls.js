@@ -1,3 +1,12 @@
+import foodImg1 from './images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg';
+import foodImg2 from './images/anna-pelzer-IGfIGP5ONV0-unsplash.jpg';
+import foodImg3 from './images/brooke-lark-1Rm9GLHV0UA-unsplash.jpg';
+import foodImg4 from './images/brooke-lark-M4E7X3z80PQ-unsplash.jpg';
+import foodImg5 from './images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg';
+import foodImg6 from './images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg';
+import foodImg7 from './images/nick-karvounis-Ciqxn7FE4vE-unsplash.jpg';
+
+
 const foodImageController = (() => {
     const pageHeader = document.getElementById('page-header');
     const previous = document.getElementById('previous');
@@ -10,13 +19,13 @@ const foodImageController = (() => {
     let intervalVar;
     let pressed = true;
     let foodImages = [
-        "url('images/alex-munsell-Yr4n8O_3UPc-unsplash.jpg')",
-        "url('images/anna-pelzer-IGfIGP5ONV0-unsplash.jpg')",
-        "url('images/brooke-lark-1Rm9GLHV0UA-unsplash.jpg')",
-        "url('images/brooke-lark-M4E7X3z80PQ-unsplash.jpg')",
-        "url('images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg')",
-        "url('images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg')",
-        "url('images/nick-karvounis-Ciqxn7FE4vE-unsplash.jpg')"
+        `url(${foodImg1})`,
+        `url(${foodImg2})`,
+        `url(${foodImg3})`,
+        `url(${foodImg4})`,
+        `url(${foodImg5})`,
+        `url(${foodImg6})`,
+        `url(${foodImg7})'`
     ];
     const buttonImages = {
         play: "https://img.icons8.com/android/24/000000/play.png",
