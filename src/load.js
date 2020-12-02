@@ -6,6 +6,15 @@ import foodImg5 from './images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg';
 import foodImg6 from './images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg';
 
 const load = (() => {
+    let foodSrc = [
+        foodImg1,
+        foodImg2,
+        foodImg3,
+        foodImg4,
+        foodImg5,
+        foodImg6
+
+    ];
     let foodUrl = [
         `url(${foodImg1})`,
         `url(${foodImg2})`,
@@ -13,11 +22,11 @@ const load = (() => {
         `url(${foodImg4})`,
         `url(${foodImg5})`,
         `url(${foodImg6})`
-    ];
+    ]
     let foodImages = [];
-    for (let i = 0; i < foodUrl.length; i++) {
+    for (let i = 0; i < foodSrc.length; i++) {
         foodImages.push(new Image());
-        foodImages[i].src = foodUrl[i];
+        foodImages[i].src = foodSrc[i];
     }
 
     return{

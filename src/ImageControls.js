@@ -12,7 +12,7 @@ const foodImageController = (() => {
     const intervalTime = 10000;
     let intervalVar;
     let pressed = true;
-    let foodImages = load.foodUrl;
+    let foodImages = [...load.foodUrl];
     const buttonImages = {
         play: "https://img.icons8.com/android/24/000000/play.png",
         pause: "https://img.icons8.com/windows/32/000000/pause--v1.png"
