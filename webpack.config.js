@@ -29,7 +29,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Output Management',
+            title: 'The Old Sailor',
         }),
         new CleanWebpackPlugin(),
     ]
