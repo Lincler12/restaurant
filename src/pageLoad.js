@@ -1,6 +1,7 @@
 import logoImg1 from './images/old-sailor.png';
 import {modal} from './modal.js';
 import {foodImageController} from './ImageControls';
+import './style.css';
 
 
 const content = (() => {
