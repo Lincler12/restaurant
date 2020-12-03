@@ -87,7 +87,7 @@ const foodImageController = (() => {
     stop.addEventListener('click', toggle);
 
 
-})();
+});
 
 
 export {foodImageController};

@@ -16,7 +16,7 @@
     }
     modalToggleElement.addEventListener('click', toggleModal);
     modalToggleElement.addEventListener('click', changeBars);
-})();
+});
 
 
 export {modal};

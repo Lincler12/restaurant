@@ -1,4 +1,7 @@
 import logoImg1 from './images/old-sailor.png';
+import {modal} from './modal.js';
+import {foodImageController} from './ImageControls';
+
 
 const content = (() => {
 
@@ -184,7 +187,11 @@ const content = (() => {
         contentElement.appendChild(footerElement);
     })();
 
+    modal();
+    foodImageController();
 })();
+
+
 
 export {
     content
