@@ -1,4 +1,6 @@
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+    CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -8,6 +10,10 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist',
+    },
     module: {
         rules: [{
                 test: /\.css$/i,
@@ -15,12 +21,12 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                use: [
-                    {
+                use: [{
                         loader: 'file-loader',
                         options: {
                             outputPath: 'images',
-                            name : '[name].[ext]'                        }
+                            name: '[name].[ext]'
+                        }
                     },
 
                 ],

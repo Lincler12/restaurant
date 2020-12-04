@@ -4,18 +4,25 @@ import foodImg3 from './images/brooke-lark-1Rm9GLHV0UA-unsplash.jpg';
 import foodImg4 from './images/brooke-lark-M4E7X3z80PQ-unsplash.jpg';
 import foodImg5 from './images/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg';
 import foodImg6 from './images/joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg';
+import aboutImg1 from './images/jason-leung-poI7DelFiVA-unsplash.jpg';
+import aboutImg2 from './images/bundo-kim-Pb9bUzH1nD8-unsplash.jpg';
 
 const load = (() => {
-    let foodSrc = [
+    const aboutImages = [];
+    const foodImages = [];
+    const foodSrc = [
         foodImg1,
         foodImg2,
         foodImg3,
         foodImg4,
         foodImg5,
         foodImg6
-
     ];
-    let foodUrl = [
+    const aboutSrc = [
+        aboutImg1,
+        aboutImg2
+    ]
+    const foodUrl = [
         `url(${foodImg1})`,
         `url(${foodImg2})`,
         `url(${foodImg3})`,
@@ -23,15 +30,31 @@ const load = (() => {
         `url(${foodImg5})`,
         `url(${foodImg6})`
     ]
-    let foodImages = [];
-    for (let i = 0; i < foodSrc.length; i++) {
-        foodImages.push(new Image());
-        foodImages[i].src = foodSrc[i];
-    }
+    const aboutUrl = [
+        `url(${aboutImg1})`,
+        `url(${aboutImg2})`
+    ]
+    const foodImagesLoad = (() => {
+        for (let i = 0; i < foodSrc.length; i++) {
+            foodImages.push(new Image());
+            foodImages[i].src = foodSrc[i];
+        }
+
+    })();
+    const aboutImagesLoad = (() => {
+        for (let i = 0; i < aboutSrc.length; i++) {
+            aboutImages.push(new Image());
+            aboutImages[i].src = foodSrc[i];
+        }
+    })();
 
     return{
+        foodImagesLoad,
+        aboutImagesLoad,
         foodImg1,
         foodUrl,
+        aboutSrc,
+        aboutUrl
     }
 })();
 

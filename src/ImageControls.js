@@ -1,93 +1,116 @@
-import {load} from './load';
+import {
+    activePageEnum
+} from './activePageEnum';
+import {
+    load
+} from './load';
 
-const foodImageController = (() => {
-    const pageHeader = document.getElementById('page-header');
-    const previous = document.getElementById('previous');
-    const next = document.getElementById('next');
-    const stop = document.getElementById('stop');
-    const imgPausePlayElement = document.createElement('img');
-    let counter = 0;
-    const imgCount = 6;
-    let play = true;
-    const intervalTime = 10000;
-    let intervalVar;
-    let pressed = true;
-    let foodImages = [...load.foodUrl];
-    pageHeader.style.backgroundImage = `url(${load.foodImg1})`;
-    const buttonImages = {
-        play: "https://img.icons8.com/android/24/000000/play.png",
-        pause: "https://img.icons8.com/windows/32/000000/pause--v1.png"
-    };
-    imgPausePlayElement.src = buttonImages.pause;
-    stop.appendChild(imgPausePlayElement);
+const imageController = (() => {
 
-    const getNext = () => {
-        if (pressed) {
-            counter++;
-            if (counter === imgCount) {
-                counter = 0;
-            }
-            pageHeader.style.backgroundImage = foodImages[counter];
+    let imageCollection = [];
 
-            pressed = false;
-            setTimeout(function () {
-                pressed = true;
-            }, 1500);
+    function load() {
+        const pageHeader = document.getElementById('page-header');
+        const previous = document.getElementById('previous');
+        const next = document.getElementById('next');
+        const stop = document.getElementById('stop');
+        const imgPausePlayElement = document.createElement('img');
+        let counter = 0;
+        let play = true;
+        const intervalTime = 10000;
+        let intervalVar;
+        let pressed = true;
 
-        }
-    }
-    const getPrevious = () => {
-        if (pressed) {
-            counter--;
-            if (counter < 0) {
-                counter = imgCount-1;
-            }
-            pageHeader.style.backgroundImage = foodImages[counter];
-            pressed = false;
-            setTimeout(function () {
-                pressed = true;
-            }, 2000);
-
-        }
-
-
-    }
-
-    function startInterval() {
-        intervalVar = setInterval(getNext, intervalTime);
-    }
-
-    function stopInterval() {
-        clearInterval(intervalVar);
-    }
-
-    function pause() {
-        imgPausePlayElement.src = buttonImages.play;
-        play = false;
-        stopInterval();
-    }
-
-    function resume() {
+        const buttonImages = {
+            play: "https://img.icons8.com/android/24/000000/play.png",
+            pause: "https://img.icons8.com/windows/32/000000/pause--v1.png"
+        };
         imgPausePlayElement.src = buttonImages.pause;
-        play = true;
-        startInterval();
-    }
+        stop.appendChild(imgPausePlayElement);
 
-    function toggle() {
-        if (play) {
-            pause();
-        } else {
-            resume();
+        const getNext = () => {
+            if (pressed) {
+                counter++;
+                if (counter === imageCollection.length) {
+                    counter = 0;
+                }
+                pageHeader.style.backgroundImage = imageCollection[counter];
+
+                pressed = false;
+                setTimeout(function () {
+                    pressed = true;
+                }, 1500);
+            }
         }
+        const getPrevious = () => {
+            if (pressed) {
+                counter--;
+                if (counter < 0) {
+                    counter = imageCollection.length - 1;
+                }
+                pageHeader.style.backgroundImage = imageCollection[counter];
+                pressed = false;
+                setTimeout(function () {
+                    pressed = true;
+                }, 2000);
+            }
+        }
+
+        function startInterval() {
+            intervalVar = setInterval(getNext, intervalTime);
+        }
+
+        function stopInterval() {
+            clearInterval(intervalVar);
+        }
+
+        function pause() {
+            imgPausePlayElement.src = buttonImages.play;
+            play = false;
+            stopInterval();
+        }
+
+        function resume() {
+            imgPausePlayElement.src = buttonImages.pause;
+            play = true;
+            startInterval();
+        }
+
+        function toggle() {
+            if (play) {
+                pause();
+            } else {
+                resume();
+            }
+        }
+        startInterval();
+
+        previous.addEventListener('click', getPrevious);
+        next.addEventListener('click', getNext);
+        stop.addEventListener('click', toggle);
     }
-    startInterval();
 
-    previous.addEventListener('click', getPrevious);
-    next.addEventListener('click', getNext);
-    stop.addEventListener('click', toggle);
+    const setImagesArray = (value) => {
+        switch (value) {
+            case activePageEnum.MENU: {
+                imageCollection = [...load.foodUrl];
+                break;
+            }
+            case activePageEnum.ABOUT: {
+                imageCollection = [...load.aboutUrl];
+                break;
+            }
+        }
+    };
+
+    return {
+        setImagesArray,
+        load,
+    }
+
+})();
 
 
-});
-
-
-export {foodImageController};
+export {
+    imageController
+};
