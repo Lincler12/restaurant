@@ -75,6 +75,12 @@ footer button {
   transition: background-image 1.5s ease;
 }
 
+.activeTab{
+  transform: scale(1.05) !important;
+  color: var(--navy-blue) !important;
+  font-weight: 600 !important;
+}
+
 .overlay {
   background: rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -126,6 +132,9 @@ a.nav-link {
 a.nav-link:hover {
   transform: scale(1.05);
   color: var(--star-command-blue);
+}
+a.inactive{
+
 }
 
 a.nav-link::before {

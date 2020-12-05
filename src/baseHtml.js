@@ -90,9 +90,11 @@ const basehtml = (() => {
                       a.id = "dining";
                       break;
                   }
-
+                  if((a.id === "location") || (a.id === "dining")){
+                    a.style.textDecoration = "line-through";
+                    a.style.color = "#666666";
+                  }
                   a.classList.add("nav-link");
-
                   a.textContent = text;
                   li.appendChild(a);
                 }
