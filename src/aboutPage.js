@@ -1,13 +1,16 @@
+import {Images} from './Images';
+
 const about = (() => {
-    const load = () => {
-        const section = document.createElement('section');
-        section.classList.add('about');
-        {
-            const h3 = document.createElement('h3');
-            h3.textContent = 'The Old Sailor';
-            section.appendChild(h3);
-            const p = document.createElement('p');
-            p.textContent = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam ratione nemo corporis, mollitia
+  const load = () => {
+    Images.aboutImagesLoad();
+    const section = document.createElement("section");
+    section.classList.add("about");
+    {
+      const h3 = document.createElement("h3");
+      h3.textContent = "The Old Sailor";
+      section.appendChild(h3);
+      const p = document.createElement("p");
+      p.textContent = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam ratione nemo corporis, mollitia
                 ipsum, recusandae incidunt blanditiis quod velit consectetur, facere eius eos sequi? Accusantium
                 quae doloribus illum consequuntur Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
                 repellendus maiores soluta veniam ab. Minima atque praesentium molestiae dolor non ipsa delectus
@@ -23,17 +26,14 @@ const about = (() => {
                 impedit fugit beatae voluptatibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Exercitationem, nemo. Quod officiis, facilis quisquam labore deserunt iusto quas odio numquam
                 consequuntur temporibus quaerat neque harum eos cumque saepe, maxime ut.`;
-            section.appendChild(p);
-        }
-        return section;
+      section.appendChild(p);
     }
+    return section;
+  };
 
-    return {
-        load,
-    }
-
+  return {
+    load,
+  };
 })();
 
-export {
-  about
-};
+export { about };
