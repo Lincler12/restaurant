@@ -1,1 +1,0 @@
-Restaurant page to practice DOM manipulation with dynamic rendering
